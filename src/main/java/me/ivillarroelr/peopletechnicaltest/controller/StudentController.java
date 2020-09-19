@@ -41,8 +41,15 @@ public class StudentController {
                                              @Valid @RequestBody Student student) {
         boolean validation = service.validateChileanRut(rut);
         if(validation){
-            Student st = service.modify(student);
-            return new ResponseEntity<>(st, HttpStatus.OK);
+            Student st = service.readById(rut);
+            if(st.getRut()==null){
+                throw new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "rut: "+rut+" was not found in the database");
+            } else {
+                st = service.modify(student);
+                return new ResponseEntity<>(st, HttpStatus.OK);
+            }
+
         } else {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, student.getRut()+" is not a valid Chilean rut");
