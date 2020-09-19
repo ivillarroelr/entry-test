@@ -58,10 +58,10 @@ public class StudentServiceImpl implements IStudentService {
         Matcher matcher = pattern.matcher(rut);
         if ( matcher.matches() == false ) return false;
         String[] stringRut = rut.split("-");
-        return stringRut[1].toLowerCase().equals(this.validateDV(stringRut[0]));
+        return stringRut[1].toLowerCase().equals(this.validateVD(stringRut[0]));
     }
 
-    private String validateDV(String rut){
+    private String validateVD(String rut){
         Integer M=0,S=1,T=Integer.parseInt(rut);
         for (;T!=0;T=(int) Math.floor(T/=10))
             S=(S+T%10*(9-M++%6))%11;
