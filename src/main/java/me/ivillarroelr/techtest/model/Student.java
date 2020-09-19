@@ -19,8 +19,8 @@ public class Student {
     private String lastname;
 
     @Column(name = "age")
-    @Min(18)
-    private Integer age;
+    @Min(value=18, message="must be equal or greater than 18")
+    private int age;
 
     @ManyToMany
     @JoinTable(
@@ -53,11 +53,11 @@ public class Student {
         this.lastname = lastname;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

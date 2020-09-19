@@ -24,7 +24,7 @@ public class StudentController {
     private IStudentService service;
 
     @PostMapping()
-    public ResponseEntity<Student> createStudent(@Valid @RequestBody Student student) {
+    public ResponseEntity<Student> createStudent(@RequestBody @Valid Student student) {
         boolean validation = service.validateChileanRut(student.getRut());
         if(validation){
             student.setRut(student.getRut().replace(".",""));
@@ -38,7 +38,7 @@ public class StudentController {
 
     @PutMapping("/{rut}")
     public ResponseEntity<Student> modifyStudent(@PathVariable() String rut,
-                                             @Valid @RequestBody Student student) {
+                                                 @RequestBody @Valid Student student) {
         boolean validation = service.validateChileanRut(rut);
         if(validation){
             student.setRut(student.getRut().replace(".",""));
