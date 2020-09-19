@@ -1,4 +1,4 @@
-package me.ivillarroelr.peopletechnicaltest.util;
+package me.ivillarroelr.techtest.util;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

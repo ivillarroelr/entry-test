@@ -1,10 +1,13 @@
-package me.ivillarroelr.peopletechnicaltest.model;
+package me.ivillarroelr.techtest.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "course")
+@JsonIgnoreProperties({"students"})
 public class Course {
 
     @Id

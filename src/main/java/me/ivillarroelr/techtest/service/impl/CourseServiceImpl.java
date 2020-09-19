@@ -1,9 +1,8 @@
-package me.ivillarroelr.peopletechnicaltest.service.impl;
+package me.ivillarroelr.techtest.service.impl;
 
-import me.ivillarroelr.peopletechnicaltest.model.Course;
-import me.ivillarroelr.peopletechnicaltest.model.Student;
-import me.ivillarroelr.peopletechnicaltest.repo.ICourseRepo;
-import me.ivillarroelr.peopletechnicaltest.service.ICourseService;
+import me.ivillarroelr.techtest.model.Course;
+import me.ivillarroelr.techtest.repo.ICourseRepo;
+import me.ivillarroelr.techtest.service.ICourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

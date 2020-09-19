@@ -1,7 +1,7 @@
-package me.ivillarroelr.peopletechnicaltest.controller;
+package me.ivillarroelr.techtest.controller;
 
-import me.ivillarroelr.peopletechnicaltest.model.Student;
-import me.ivillarroelr.peopletechnicaltest.service.IStudentService;
+import me.ivillarroelr.techtest.model.Student;
+import me.ivillarroelr.techtest.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,6 +27,7 @@ public class StudentController {
     public ResponseEntity<Student> createStudent(@Valid @RequestBody Student student) {
         boolean validation = service.validateChileanRut(student.getRut());
         if(validation){
+            student.setRut(student.getRut().replace(".",""));
             Student st = service.save(student);
             return new ResponseEntity<>(st, HttpStatus.CREATED);
         } else {
@@ -40,6 +41,7 @@ public class StudentController {
                                              @Valid @RequestBody Student student) {
         boolean validation = service.validateChileanRut(rut);
         if(validation){
+            student.setRut(student.getRut().replace(".",""));
             Student st = service.readById(rut);
             if(st.getRut()==null){
                 throw new ResponseStatusException(
@@ -59,6 +61,7 @@ public class StudentController {
     public ResponseEntity<Student> findOneStudent(@PathVariable String rut) {
         boolean validation = service.validateChileanRut(rut);
         if(validation){
+            rut.replace(".","");
             Student st = service.readById(rut);
             if(st.getRut()==null){
                 throw new ResponseStatusException(
@@ -111,6 +114,7 @@ public class StudentController {
     public ResponseEntity deleteStudent(@PathVariable() String rut) {
         boolean validation = service.validateChileanRut(rut);
         if(validation){
+            rut.replace(".","");
             Student st = service.readById(rut);
             if(st.getRut()==null){
                 throw new ResponseStatusException(

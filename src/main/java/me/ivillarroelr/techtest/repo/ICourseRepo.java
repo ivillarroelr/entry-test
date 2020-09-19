@@ -1,6 +1,6 @@
-package me.ivillarroelr.peopletechnicaltest.repo;
+package me.ivillarroelr.techtest.repo;
 
-import me.ivillarroelr.peopletechnicaltest.model.Course;
+import me.ivillarroelr.techtest.model.Course;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 

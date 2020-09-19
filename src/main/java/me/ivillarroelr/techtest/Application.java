@@ -1,4 +1,4 @@
-package me.ivillarroelr.peopletechnicaltest;
+package me.ivillarroelr.techtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

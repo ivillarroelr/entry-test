@@ -1,4 +1,4 @@
-package me.ivillarroelr.peopletechnicaltest.model;
+package me.ivillarroelr.techtest.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

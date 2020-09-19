@@ -1,4 +1,4 @@
-package me.ivillarroelr.peopletechnicaltest;
+package me.ivillarroelr.techtest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,5 +12,4 @@ public class ApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }

@@ -1,8 +1,8 @@
-package me.ivillarroelr.peopletechnicaltest.service.impl;
+package me.ivillarroelr.techtest.service.impl;
 
-import me.ivillarroelr.peopletechnicaltest.model.Student;
-import me.ivillarroelr.peopletechnicaltest.repo.IStudentRepo;
-import me.ivillarroelr.peopletechnicaltest.service.IStudentService;
+import me.ivillarroelr.techtest.model.Student;
+import me.ivillarroelr.techtest.repo.IStudentRepo;
+import me.ivillarroelr.techtest.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -53,6 +53,7 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public boolean validateChileanRut(String rut) {
+        rut = rut.replace(".", "");
         Pattern pattern = Pattern.compile("^[0-9]+-[0-9kK]{1}$");
         Matcher matcher = pattern.matcher(rut);
         if ( matcher.matches() == false ) return false;
