@@ -72,7 +72,7 @@ public class StudentController {
         }
     }
 
-    @GetMapping("/{all}")
+    @GetMapping("/all")
     public ResponseEntity<List<Student>> findAllStudents() {
         List<Student> lst = service.listAll();
         if(lst.isEmpty()){
