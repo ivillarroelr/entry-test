@@ -43,7 +43,7 @@ public class CourseController {
 
     }
 
-    @GetMapping("/{code}")
+    @GetMapping(value = "/{code}")
     public ResponseEntity<Course> findOneCourse(@PathVariable String code) {
         Course cs = service.readById(code);
         if(cs.getCode()==null) {
@@ -54,7 +54,7 @@ public class CourseController {
         }
     }
 
-    @GetMapping("/{all}")
+    @GetMapping(value = "/all")
     public ResponseEntity<List<Course>> findAllCourses() {
         List<Course> lst = service.listAll();
         if(lst.isEmpty()){
